@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "outDir": "out",
+    "lib": ["WebWorker", "ESNext"],
+    "sourceMap": true,
+    "rootDirs": ["./tests", "./src"],
+    "strict": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "inlineSourceMap": false,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false
+  },
+  "exclude": ["node_modules", "out/**/*"]
+}
