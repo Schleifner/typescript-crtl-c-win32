@@ -1,15 +1,20 @@
 {
   "name": "typescript-crtl-c-win32",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "out/index.js",
   "scripts": {
-    "compile": "tsc -p  ./"
+    "compile": "tsc -p  ./",
+    "package": "tsc --declaration && npm pack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.10.5",
     "typescript": "^5.3.3"
-  }
+  },
+  "files": [
+    "out",
+    "resources"
+  ]
 }

@@ -10,20 +10,14 @@ class ControlCEventSender {
         "ctrl-c-event-sender.exe"
       );
       const process = execFile(path, [pid]);
-      const stdStream = process.stdout;
-      if (stdStream === null) {
-        fail(new Error("fail to start executable!"));
-      } else {
-        stdStream.on("close", () => {
+      process.on("close", (code) => {
+        if (code === 0) {
           resolve();
-        });
-        stdStream.on("error", (error) => {
-          fail(error);
-        });
-        stdStream.on("readable", (data: string) => {
-          readable(data);
-        });
-      }
+        }
+      });
+      process.on("error", (error) => {
+        fail(error);
+      });
     });
   }
 }
